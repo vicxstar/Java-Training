@@ -2,6 +2,8 @@ package persistence;
 
 import java.util.Collection;
 
+import org.springframework.stereotype.Component;
+
 import database.BookDataBase;
 import entity.Book;
 
@@ -12,6 +14,10 @@ import entity.Book;
  * purpose: Step 6. DAO implementation (PERSISTENCE LAYER - implementation) 
  *
  */
+
+//specify the component name:
+//this allows Spring to automatically detect our custom beans:
+@Component("dao")
 public class BookDaoImpl implements BookDao{
 
 	//Override the methods from the DAO interface (menu system):

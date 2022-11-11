@@ -38,9 +38,9 @@ public class StudentClient {
 		//FOR STUDENT CONFIGURATION JAVA 2:
 		//instantiate a new 'springContainer' object:
 		//import 'AnnotationConfigApplicationContext':
-//		AnnotationConfigApplicationContext springContainer=new AnnotationConfigApplicationContext(StudentConfiguration2.class);
+		AnnotationConfigApplicationContext springContainer=new AnnotationConfigApplicationContext(StudentConfiguration2.class);
 		//instantiate a new 'BookPresentation' object and use the spring container to get the associated @Beans:
-//		StudentPresentation studentPresentation2 = (StudentPresentation) springContainer.getBean("stuPresentation");
+		StudentPresentation studentPresentation2 = (StudentPresentation) springContainer.getBean("stuPresentation");
 		
 		//FOR STUDENT CONFIGURATION XML 1:
 		//Create an 'ApplicationContext' object called 'springContainer':
@@ -52,9 +52,9 @@ public class StudentClient {
 		//FOR STUDENT CONFIGURATION XML 2:
 		//Create an 'ApplicationContext' object called 'springContainer':
 		//import 'ApplicationContext' and 'ClassPathXmlApplicationContext':	
-		ApplicationContext springContainer = new ClassPathXmlApplicationContext("studentconfiguration2.xml");
+//		ApplicationContext springContainer = new ClassPathXmlApplicationContext("studentconfiguration2.xml");
 		//instantiate a new 'BookPresentation' object and use the spring container to get the associated @Beans:
-		StudentPresentation studentPresentation4 = (StudentPresentation) springContainer.getBean("stuPresentation");
+//		StudentPresentation studentPresentation4 = (StudentPresentation) springContainer.getBean("stuPresentation");
 		
 		
 		//create a continuous loop to keep going until it a ‘break’ statement is reached:
@@ -65,13 +65,13 @@ public class StudentClient {
 //			studentPresentation.showMenu();
 			
 			//FOR STUDENT CONFIGURATION JAVA 2:
-//			studentPresentation2.showMenu();
+			studentPresentation2.showMenu();
 			
 			//FOR STUDENT CONFIGURATION XML 1:
 //			studentPresentation3.showMenu();
 			
 			//FOR STUDENT CONFIGURATION XML 2:
-			studentPresentation4.showMenu();
+//			studentPresentation4.showMenu();
 			
 			//ask for user input:
 			System.out.println("Enter Choice : ");
@@ -84,13 +84,13 @@ public class StudentClient {
 //			studentPresentation.performMenu(choice);
 			
 			//FOR STUDENT CONFIGURATION JAVA 2:
-//			studentPresentation2.performMenu(choice);
+			studentPresentation2.performMenu(choice);
 			
 			//FOR STUDENT CONFIGURATION XML 1:
 //			studentPresentation3.performMenu(choice);
 			
 			//FOR STUDENT CONFIGURATION XML 2:
-			studentPresentation4.performMenu(choice);
+//			studentPresentation4.performMenu(choice);
 		}
 	}
 }

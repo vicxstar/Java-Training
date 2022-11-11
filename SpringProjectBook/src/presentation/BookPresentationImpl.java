@@ -3,9 +3,13 @@ package presentation;
 import java.util.Collection;
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import entity.Book;
 import service.BookService;
-import service.BookServiceImpl;
+//import service.BookServiceImpl;
 
 /**
  *
@@ -14,6 +18,10 @@ import service.BookServiceImpl;
  * purpose: Step 8. The PRESENTATION IMPLEMENTATION (PRESENTATION LAYER - implementation)
  *
  */
+
+//specify the component name:
+//this allows Spring to automatically detect our custom beans:
+@Component("bkPresentation")
 public class BookPresentationImpl implements BookPresentation{
 
 	//instantiate a new object of the service implementation (SERVICE implementation) which implements the service interface:
@@ -23,6 +31,10 @@ public class BookPresentationImpl implements BookPresentation{
 	//declare an 'BookService' object:
 	private BookService bookService;
 	
+	//the '@Autowired' annotation is used to tell Spring which candidate it can use:
+	@Autowired
+	//the '@Qualifier' is used in all implementations of an interface (when there is more than 1 implementation of an interface):
+	@Qualifier("service")
 	//generate setter:
 	public void setBookService(BookService bookService) {
 		this.bookService = bookService;
@@ -31,7 +43,7 @@ public class BookPresentationImpl implements BookPresentation{
 	@Override
 	public void showMenu() {
 		System.out.println("===========================");
-		System.out.println("Employee Management System");
+		System.out.println("Book Management System");
 		System.out.println("1. List All Books");
 		System.out.println("2. Search Books By ID");
 		System.out.println("3. Add New Book");;
@@ -42,7 +54,7 @@ public class BookPresentationImpl implements BookPresentation{
 
 	@Override
 	public void performMenu(int choice) {
-		//declare and initalise a scanner for user input:
+		//declare and initialise a scanner for user input:
 		Scanner scanner=new Scanner(System.in);
 		
 		//create the methods for the menu choices using ‘switch’ statements:
@@ -113,7 +125,6 @@ public class BookPresentationImpl implements BookPresentation{
 				//if the id does not exist, tell the user:
 				System.out.println("Book with ID '" + dbid + "' does not exist");
 			break;
-				
 			
 		case 5:
 			//the 'Exit' switch option:

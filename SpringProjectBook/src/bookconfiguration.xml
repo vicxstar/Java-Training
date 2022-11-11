@@ -3,12 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
+	<!-- The instantiation of the 'Dao' object -->
 	<bean id = "dao" class = "persistence.BookDaoImpl"></bean>
 	
+	<!-- Constructor Injection -->
 	<bean id = "service" class = "service.BookServiceImpl">
 		<constructor-arg name = "bookDao" ref = "dao"></constructor-arg>
 	</bean>
 	
+	<!-- Setter Injection -->
 	<bean id = "bkPresentation" class = "presentation.BookPresentationImpl">
 		<property name = "bookService" ref = "service"></property>
 	</bean>

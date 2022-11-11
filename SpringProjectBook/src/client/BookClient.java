@@ -2,9 +2,10 @@ package client;
 
 import java.util.Scanner;
 
-import org.springframework.context.ApplicationContext;
+//import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+//import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import presentation.BookPresentation;
 
@@ -26,11 +27,11 @@ public class BookClient {
 		
 		//instantiate a new 'springContainer' object:
 		//import 'AnnotationConfigApplicationContext':
-//		AnnotationConfigApplicationContext springContainer=new AnnotationConfigApplicationContext(BookConfiguration.class);
+		AnnotationConfigApplicationContext springContainer=new AnnotationConfigApplicationContext(BookConfiguration.class);
 		
 		//Create an 'ApplicationContext' object called 'springContainer':
 		//import 'ApplicationContext' and 'ClassPathXmlApplicationContext':
-		ApplicationContext springContainer=new ClassPathXmlApplicationContext("bookconfiguration.xml");
+//		ApplicationContext springContainer=new ClassPathXmlApplicationContext("bookconfiguration.xml");
 		
 		//instantiate a new 'BookPresentation' object and use the spring container to get the associated @Beans:
 		BookPresentation bookPresentation = (BookPresentation)springContainer.getBean("bkPresentation");

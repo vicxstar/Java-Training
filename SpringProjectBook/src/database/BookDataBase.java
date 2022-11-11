@@ -14,7 +14,7 @@ import entity.Book;
 public class BookDataBase {
 
 	//Initialise a linked has map:
-	//import 'map', 'hashmap' and the entity 'Employee':
+	//import 'map', 'hashmap' and the entity 'Book':
 	static private Map<Integer, Book> bookList = new LinkedHashMap<Integer, Book>();
 	
 	//put values into 'bookList':
@@ -28,7 +28,7 @@ public class BookDataBase {
 	}
 	
 	//create another map to get the list:
-		public static Map<Integer, Book> getBookList() {
-			return bookList;
-		}
+	public static Map<Integer, Book> getBookList() {
+		return bookList;
+	}
 }

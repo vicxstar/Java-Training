@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 
 //specify the packages that we want to be scanned:
 //if no base package, give names of each package (in array form):
-@ComponentScan(basePackages = {"client", "database", "entity", "persistence", "presentation", "service"})
+@ComponentScan(basePackages = {"persistence", "presentation", "service"})
 public class StudentConfiguration2 {
 	
 }
