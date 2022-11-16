@@ -30,7 +30,7 @@ from employees;
 
 -- operations:
 -- Relational operators: =, ==, <, >, <=, >=, !=, NULL, NOT NULL
-select firstName FName, lastName LName, salary
+select firstName "First Name", lastName "Last Name", salary
 from employees
 where salary > 100;
 

@@ -44,6 +44,7 @@ salary double,
 commission_pct double,
 managerId int,
 departmentId int,
+departmentName varchar(30) not null,
 constraint jobId_FK
 foreign key(jobId) references Jobs(jobId),
 constraint deptId_FK
@@ -51,8 +52,8 @@ foreign key(departmentId) references Departments(departmentId));
 
 -- insert values:
 insert into Employees
-values (3001, "Vic", "Ayo", "vickiayo@email.com", 079123456765, "2020-01-21", 30, 5000, 100.00, 3021, 300),
-(1001, "Jen", "Smart", "jensmart@email.com", 078323476125, "2020-05-15", 10, 3000, 90.00, 1021, 100),
-(4001, "Dorcas", "English", "dorcaseng@email.com", 079123456765, "2010-11-10", 40, 20000, 1000.00, 4021, 400),
-(2001, "Juliet", "Truimph", "julietri@email.com", 079123456765, "2022-10-23", 20, 2000, 80.00, 2021, 200),
-(5001, "James", "Kempt", "jamesk@email.com", 079123456765, "2019-03-03", 50, 1500, 20.00, 5021, 500);
+values (3001, "Vic", "Ayo", "vickiayo@email.com", 079123456765, "2020-01-21", 30, 5000, 100.00, 3021, 300, "Customer Service"),
+(1001, "Jen", "Smart", "jensmart@email.com", 078323476125, "2020-05-15", 10, 3000, 90.00, 1021, 100, "Sales"),
+(4001, "Dorcas", "English", "dorcaseng@email.com", 079123456765, "2010-11-10", 40, 20000, 1000.00, 4021, 400, "Finance"),
+(2001, "Juliet", "Truimph", "julietri@email.com", 079123456765, "2022-10-23", 20, 2000, 80.00, 2021, 200, "HR"),
+(5001, "James", "Kempt", "jamesk@email.com", 079123456765, "2019-03-03", 50, 1500, 20.00, 5021, 500, "Disciplinary");
