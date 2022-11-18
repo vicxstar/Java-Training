@@ -48,8 +48,8 @@ where managerId is not null;
 
 -- Logical operators: NOT, AND, OR, BETWEEN:
 select *
-from departments
-where not departmentName = "finance";
+from employees
+where not departmentName = "Sales";
 
 -- or:
 select *
