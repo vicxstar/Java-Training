@@ -1,5 +1,7 @@
 package com.vic.persistence;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,4 +18,7 @@ import com.vic.entity.DvdLibrary;
 @Repository
 public interface DvdLibraryDao extends JpaRepository<DvdLibrary, Integer> {
 	
+	//to search via title (the Jpa does this for us):
+	//import 'List'
+	List<DvdLibrary> findByTitle(String title);
 }

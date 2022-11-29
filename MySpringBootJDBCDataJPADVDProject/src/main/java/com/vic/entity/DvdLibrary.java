@@ -30,7 +30,7 @@ import lombok.ToString;
 //to get the 'Entity' method:
 //specifies that the class is an entity
 @Entity
-//to name the table:
+//to specify which table in the database to use:
 //@Table(name = "Dvd Library")
 public class DvdLibrary {
 

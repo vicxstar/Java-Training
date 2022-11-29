@@ -1,6 +1,7 @@
 package com.vic.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import com.vic.entity.DvdLibrary;
 
@@ -21,5 +22,5 @@ public interface DvdLibraryService {
 	boolean deleteDvd(int dvdId);
 	boolean editDvd(int dvdId);
 	boolean updateDvd(DvdLibrary dvd);
-//	Collection<DvdLibrary> searchDvdByTitle(String title);
+	List<DvdLibrary> getDvdsByTitle(String title);
 }

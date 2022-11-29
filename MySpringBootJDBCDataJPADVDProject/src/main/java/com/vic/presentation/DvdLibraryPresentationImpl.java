@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -38,10 +39,11 @@ public class DvdLibraryPresentationImpl implements DvdLibraryPresentation {
 		System.out.println("DVD Management System");
 		System.out.println("1. List All DVDs");
 		System.out.println("2. Search DVD By ID");
-		System.out.println("3. Add New DVD");
-		System.out.println("4. Delete DVD");
-		System.out.println("5. Edit DVD");
-		System.out.println("6. Exit");
+		System.out.println("3. Search DVD By Title");
+		System.out.println("4. Add New DVD");
+		System.out.println("5. Delete DVD");
+		System.out.println("6. Edit DVD");
+		System.out.println("7. Exit");
 		System.out.println("============================");
 		
 	}
@@ -82,8 +84,28 @@ public class DvdLibraryPresentationImpl implements DvdLibraryPresentation {
 				System.out.println("Dvd with ID '" + id + "' does not exist");
 			break;
 		
-		//Add New DVD:	
+		//Search DVD By Title	:
 		case 3:
+			//ask for user input:
+			System.out.println("Please enter the Dvd's Title: ");
+			String dvdT = scanner.nextLine();
+			
+			//create a list to store the dvds that match the user's input:
+			List<DvdLibrary> titleOfDvd = dvdLibraryService.getDvdsByTitle(dvdT);
+			
+			//check if there are any dvd's matching the title inputed:
+			if(titleOfDvd.size() != 0) {
+				//if there are, print them:
+				for(DvdLibrary d : titleOfDvd) {
+					System.out.println(d);
+				}
+			}
+			//if there are not, tell the user:
+			else
+				System.out.println("Dvd with title '" + dvdT + "' does not exist.");
+			
+		//Add New DVD:	
+		case 4:
 			//instantiate a new 'DvdLibrary' object:
 			DvdLibrary newDvd = new DvdLibrary();
 			
@@ -129,7 +151,7 @@ public class DvdLibraryPresentationImpl implements DvdLibraryPresentation {
 			break;
 			
 		//Delete DVD:
-		case 4:
+		case 5:
 			//ask for user input:
 			System.out.println("Enter DVD ID: ");
 			int did = scanner.nextInt();
@@ -144,7 +166,7 @@ public class DvdLibraryPresentationImpl implements DvdLibraryPresentation {
 			break;
 			
 		//Edit DVD:
-		case 5:
+		case 6:
 			//ask for user input:
 			System.out.println("Enter DVD ID: ");
 			String edid = scanner.nextLine();
@@ -222,7 +244,7 @@ public class DvdLibraryPresentationImpl implements DvdLibraryPresentation {
 			}
 			break;
 			
-		case 6:
+		case 7:
 			//'Exit' option switch:
 			System.out.println("Thanks for using Employee Management System");
 			//exit function:

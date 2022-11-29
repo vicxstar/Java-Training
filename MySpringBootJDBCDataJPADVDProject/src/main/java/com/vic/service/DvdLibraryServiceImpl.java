@@ -1,6 +1,7 @@
 package com.vic.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,9 +72,10 @@ public class DvdLibraryServiceImpl implements DvdLibraryService {
 		dvdLibraryDao.save(dvd);
 		return true;
 	}
-//	
-//	@Override
-//	public Collection<DvdLibrary> searchDvdByTitle(String title) {
-//		return dvdLibraryDao.findByAll(title);
-//	}
+
+	@Override
+	public List<DvdLibrary> getDvdsByTitle(String title) {
+		//return the title:
+		return dvdLibraryDao.findByTitle(title);
+	}
 }
