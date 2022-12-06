@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<title> Pay Slip </title>
+</head>
+<hr> Horizontal Row
+<h2>Customer Bank Balance</h2>
+<table border = "1">
+	<!-- tr: Table Row -->
+	<tr>
+		<!-- Table Header -->
+		<th> Customer Name </th>		
+		<th> Allowance A </th>		
+		<th> Allowance B </th>		
+		<th> Deduction </th>		
+		<th >Total Balance </th>		
+</tr>
+	<tr>
+	<!-- table data -->
+		<td th:text = "${balance.customer.custName}"></td>
+		<td th:text = "${balance.allowanceA}"></td>
+		<td th:text = "${balance.allowanceB}"></td>
+		<td th:text = "${balance.deduction}"></td>
+		<td th:text = "${balance.totalBalance}"></td>
+	</tr>
+</table>
+<br><br>
+<!-- The Homepage Link -->
+<a href = "./homepage"> Return To Homepage </a>
+</body>
+</html>

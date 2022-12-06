@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- The 'thymeleaf' support -->
+<html xmlns:th = "https://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title> Login Page </title>
+</head>
+<body>
+<h1> Customer Management System </h1>
+<!-- To accept input from the user -->
+<!-- The Method Mapper Name -->
+<form action = "#" th:action = "@{./login}" th:object= "${customer}">
+	Enter Customer Name : <input type = "text" th:field = "*{custName}"><br><br>
+	Enter Password : <input type = "password" th:field = "*{password}"><br><br>
+	<input type = "Submit" value = "Login">
+</form>
+<br><br>
+<h2 th:text = "${message}" style = "color: red"></h2>
+</body>
+</html>

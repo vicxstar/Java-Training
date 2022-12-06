@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- The 'thymeleaf' support -->
+<html xmlns:th = "https://thymeleaf.org">
+<head>
+<meta charset = "UTF-8">
+<title> Receipt </title>
+</head>
+<body>
+<h1> Customer Product Management System </h1>
+<br><br>
+<hr> <!-- Horizontal Row -->
+<h3> Customer Receipt </h3>
+<table border = "1">
+	<!-- tr: Table Row -->
+	<tr>
+		<!-- Table Header -->
+		<th> Customer ID </th>
+		<th> Product Name </th>
+		<th> Number Of Items </th>
+		<th> Total Spent </th>
+	</tr>
+	<tr>
+	<!-- table data -->
+		<td th:text = "${receipt.customer.customerId}"></td>
+		<td th:text = "${receipt.product.productName}"></td>
+		<td th:text = "${receipt.itemsBought}"></td>
+		<td th:text = "${receipt.totalSpent}"></td>
+	</tr>
+</table>
+<br><br>
+<!-- The Homepage Link -->
+<a href = "./homepage"> Return To Homepage </a>
+</body>
+</html>

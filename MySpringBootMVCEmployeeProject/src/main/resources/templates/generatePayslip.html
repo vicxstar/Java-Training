@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<title> Pay Slip </title>
+</head>
+<hr> Horizontal Row
+<h2>Employee Pay Slip</h2>
+<table border = "1">
+	<!-- tr: Table Row -->
+	<tr>
+		<!-- Table Header -->
+		<th>First Name</th>	
+		<th>Last Name</th>		
+		<th>Allowance A</th>		
+		<th>Allowance B</th>		
+		<th>Deduction</th>		
+		<th>Total Salary</th>		
+</tr>
+	<tr>
+	<!-- table data -->
+		<td th:text = "${payslip.employee.empFirstName}"></td>
+		<td th:text = "${payslip.employee.empLastName}"></td>
+		<td th:text = "${payslip.allowanceA}"></td>
+		<td th:text = "${payslip.allowanceB}"></td>
+		<td th:text = "${payslip.deduction}"></td>
+		<td th:text = "${payslip.totalSalary}"></td>
+	</tr>
+</table>
+<br><br>
+<!-- The Homepage Link -->
+<a href = "./"> Return To Homepage </a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- The 'thymeleaf' support -->
+<html xmlns:th = "https://thymeleaf.org">
+<head>
+<meta charset = "UTF-8">
+<title> Customer Bank Management System </title>
+</head>
+<body>
+<!-- The First Heading -->
+<h1> Homepage </h1>
+<!-- To Show The User's Name Whilst The Session Runs -->
+<hr>
+<h3 th:text = "'Welcome ' + ${session.customer.custName} + '!'"></h3>
+<hr>
+<!-- A Link To List All Customers -->
+<a href = "./listAllPage" > List All Customers </a>
+<br><br>
+<!-- A Link To Search Customers By Account ID -->
+<!-- The Page Mapper Name -->
+<a href = "./searchCustByIdPage" > Search Customer By ID </a>
+<br><br>
+<!-- A Link To Delete A Customer -->
+<!-- The Page Mapper Name -->
+<a href = "./deleteCustPage"> Delete Customer </a>
+<br><br>
+<!-- A Link To Increment A Customer's Bank Balance -->
+<!-- The Page Mapper Name -->
+<a href = "./incbalPage"> Increment Bank Balance </a>
+<br><br>
+<!-- A Link To Search For A Customer By Their Bank Balance -->
+<!-- The Page Maper Name -->
+<a href = "./genBalPage"> Generate Customer's Bank Balance </a>
+<br><br>
+</body>
+</html>

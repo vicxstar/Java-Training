@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- The 'thymeleaf' support -->
+<html xmlns:th = "https://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title> Buy Products </title>
+</head>
+<body>
+<h1> Customer Product Management System </h1>
+<!-- To Show The User's Name Whilst The Session Runs -->
+<hr>
+<h3 th:text="'Welcome '+${session.customer.name}+'!'"></h3>
+<hr>
+<!-- To accept input from the user -->
+<!-- The Method Mapper Name -->
+<form action="./buyProductById">
+	Enter Product ID <input type = "text" name = "productId"><br><br>
+	Enter Product Quantity <input type = "text" name = "quantity"><br><br>
+	<input type = "submit" value = "Buy Product">
+</form>
+<br><br>
+<!-- The Homepage Link -->
+<a href = "./homepage"> Return To Homepage </a>
+</body>
+</html>
